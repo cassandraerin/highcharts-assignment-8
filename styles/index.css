@@ -1,0 +1,25 @@
+body {
+	font-family: comic, Arial, sans-serif;
+	font-size: 70%;
+	background-color: #008B8B;
+	color: #fff;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 20px;
+}
+h1 {
+	font-size: 295%;
+	font-family: helvetica, Arial, sans-serif;
+}
+p {
+	font-size: 150%;
+}
+a {
+	font size: 200%;
+}
+
+@media (max-width: 700px) {
+	#graph, #container { margin: 0; }
+	body {margin: 0;
+		padding: 0;}
+}

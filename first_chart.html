@@ -6,12 +6,51 @@
         <title>My first chart with Highcharts</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
         <script src="js/highcharts.js"></script>
+				<script src="js/themes/dark-unica.js"></script>
 </head>
 <body>
 
 <h1>My first chart with Highcharts</h1>
 <!-- add the div and the code below this comment -->
-
-
+<div id="container" style="width:100%; height:400px;"></div>
+<script>
+$(function () {
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges', 'Pear']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Bob',
+            data: [1, 0, 4, 6]
+        }, {
+            name: 'Lilly',
+            data: [5, 7, 3, 6]
+        }]
+    });
+});
+var chart1; // globally available
+$(function() {
+       chart1 = Highcharts.stockChart('container', {
+         rangeSelector: {
+            selected: 1
+         },
+         series: [{
+            name: 'USD to EUR',
+            data: usdtoeur // predefined JavaScript array
+         }]
+      });
+   });
+	 </script>
 </body>
 </html>

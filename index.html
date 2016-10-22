@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="js/themes/gray.js"></script>
+	<link href="styles/index.css" rel="stylesheet">
+</head>
+<body>
+<h1>Crime Rates In The U.S.</h1>
+<h2> The fluctuation of crime in the United States is important to keep track of because it is often a good indication of what laws are working or need to be improved on in order to reduce crime rates. 2015 was a good indication that some kind of change is needed due to the spike in murder and nonnegligent manslaughter in the U.S. The FBI catagorizes violent crime as ofenses that involve force or threat of force. These include murder, rape, robery and aggravated assault.</h2>
+
+<div id="container" style="min-width: 310px; height: 450px; margin: 0 auto"></div>
+<table id="datatable" style="">
+<script>
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'U.S. Violent Crime Rates'
+        },
+        subtitle: {
+            text: 'Source: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-1">ucr.fbi.gov</a>'
+        },
+        xAxis: {
+            categories: ['2015', '2014', '2013', '2012', '2011',],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Crime Rates',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -150,
+            y: 100,
+            floating: true,
+            borderWidth: -10,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#fff'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Murder Manslaughter',
+            data: [15696, 14164, 14319, 14856, 14661]
+        }, {
+            name: 'Rape',
+            data: [90185, 84864, 82109, 85141, 84175]
+        }, {
+            name: 'Aggrevated Assault',
+            data: [764449, 731089, 726777, 762009, 752423]
+        }, {
+            name: 'Robbery',
+            data: [327374, 322905, 345093, 355051, 354746]
+        }]
+    });
+});
+</script>
+ <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-1">FBI Department Of Justice crime in the U.S.</a>
+
+<h2> Violent crime includes the deaths of police officers. Police deaths are catagorized by the types of duties the officers were performing at the time of their death, which often overlaps with the violent crimes in the U.S.</h2>
+<div id="graph" style="min-width: 310px; height: 450px; margin: 0 auto"></div>
+<script>
+$(function () {
+    $('#graph').highcharts({
+        title: {
+            text: 'Police Officer Fatalities',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: ucr.fbi.gov',
+            x: -20
+        },
+        xAxis: {
+            categories: ['2011', '2012', '2013', '2014',
+                '2015']
+        },
+        yAxis: {
+            title: {
+                text: 'Police Deaths'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'deaths'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Total Police Fatalities',
+            data: [72, 48, 27, 51, 41]
+        }, {
+            name: 'Arrests',
+            data: [23, 12, 6, 4, 5]
+        }, {
+            name: 'Traffic Persuits',
+            data: [11, 8, 2, 9, 6]
+        },{
+            name: 'Ambush/Tactical',
+            data: [24, 11, 9, 11, 11]
+        },{
+            name: 'Disturbance Calls',
+            data: [7, 4, 4, 11, 3]
+        },{
+            name: 'Unprovoked Attacks',
+            data: [0, 0, 0, 1, 3]
+        },{
+            name: 'Handling Prisioners',
+            data: [1, 3, 0, 0, 2]
+        },{
+            name: 'People With Mental Illness',
+            data: [0, 1, 0, 3, 2]
+        },{
+            name: 'Investigations',
+            data: [6, 9, 6, 12, 9]
+        },]
+    });
+})
+</script>
+ <a href="https://ucr.fbi.gov/leoka/2011/officers-feloniously-killed/officers-feloniously-killed">Department Of Justice 2011, </a>
+  <a href="https://ucr.fbi.gov/leoka/2012/officers-feloniously-killed/felonious_topic_page_-2012">DOJ 2012, </a>
+<a href="https://ucr.fbi.gov/leoka/2013/officers-feloniously-killed/felonious_topic_page_-2013">DOJ 2013, </a>
+<a href="https://ucr.fbi.gov/leoka/2014/officers-feloniously-killed">DOJ 2014, </a>
+	<a href="https://ucr.fbi.gov/leoka/2015/officers-feloniously-killed/felonious_topic_page_-2015">DOJ 2015</a>
+
+<p> By Cassandra Rosevelt </p>
+</body>
+</html>
